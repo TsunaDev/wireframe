@@ -5,7 +5,7 @@
 ** Login   <martin.van-elslande@epitech.eu>
 ** 
 ** Started on  Wed Nov 23 13:55:01 2016 Martin Van Elslande
-** Last update Wed Dec  7 13:54:00 2016 Martin Van Elslande
+** Last update Thu Dec  8 13:51:30 2016 Martin Van Elslande
 */
 
 #include		<math.h>
@@ -35,7 +35,7 @@ void			create_wframe_verticals(t_my_framebuffer *framebuffer,
 
   n = 0;
   x = 0;
-  angle = 3.1415926535897932 * 3 / 4;
+  angle = 3.1415926535897932 * 5 / 6;
   while (n < size[1])
     {
       while (x < size[0] * n)
@@ -66,7 +66,7 @@ void			create_wireframe(t_my_framebuffer *framebuffer,
 
   n = 0;
   x = 0;
-  angle = 3.1415926535897932 * 3 / 4;
+  angle = 3.1415926535897932 * 5 / 6;
   while (x < size[0] * size[1] - 1)
     {
       pose3d = create_3dvector(coordinates[x], x);

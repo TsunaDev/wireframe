@@ -5,7 +5,7 @@
 ** Login   <martin.van-elslande@epitech.eu>
 ** 
 ** Started on  Mon Dec  5 23:08:28 2016 Martin Van Elslande
-** Last update Tue Dec  6 22:40:37 2016 Martin Van Elslande
+** Last update Wed Dec  7 22:54:45 2016 Martin Van Elslande
 */
 
 #include        <SFML/Graphics/RenderWindow.h>
@@ -18,6 +18,7 @@ void	my_draw_line_2(t_my_framebuffer *framebuffer, int *arr)
   int	stock;
   int	i;
 
+  i = 1;
   stock = arr[3] / 2;
   while (i <= arr[3])
     {
@@ -38,6 +39,7 @@ void	my_draw_line_1(t_my_framebuffer *framebuffer, int *arr)
   int	i;
   int	stock;
 
+  i = 1;
   stock = arr[2] / 2;
   while (i <= arr[2])
     {

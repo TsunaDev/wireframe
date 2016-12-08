@@ -5,7 +5,7 @@
 ** Login   <martin.van-elslande@epitech.eu>
 ** 
 ** Started on  Tue Dec  6 21:47:22 2016 Martin Van Elslande
-** Last update Tue Dec  6 21:57:16 2016 Martin Van Elslande
+** Last update Thu Dec  8 13:52:57 2016 Martin Van Elslande
 */
 
 #include                <SFML/Graphics/RenderWindow.h>
@@ -23,7 +23,7 @@ sfVector3f              create_3dvector(int *coordinates, int nb)
 {
   sfVector3f    pose3d;
 
-  pose3d.x = 150 + ((nb) % 6) * 40;
+  pose3d.x = 300 + ((nb) % 6) * 40;
   pose3d.y = (coordinates[1]) * 40;
   pose3d.z = 300 - (coordinates[2]) * 10;
   return (pose3d);

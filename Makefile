@@ -5,13 +5,13 @@
 ## Login   <martin.van-elslande@epitech.eu>
 ## 
 ## Started on  Thu Nov 10 15:13:37 2016 Martin Van Elslande
-## Last update Wed Dec  7 13:53:05 2016 Martin Van Elslande
+## Last update Wed Dec  7 22:55:02 2016 Martin Van Elslande
 ##
 
 CFLAGS	=	-I include
 
 SRC	=	infog.c			\
-		my_draw_line.c		\
+		src/my_draw_line.c		\
 		src/my_put_pixel.c	\
 		get_coordinates.c	\
 		src/window.c		\
