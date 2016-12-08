@@ -5,7 +5,7 @@
 ** Login   <martin.van-elslande@epitech.eu>
 ** 
 ** Started on  Tue Dec  6 21:45:51 2016 Martin Van Elslande
-** Last update Thu Dec  8 15:12:53 2016 Martin Van Elslande
+** Last update Thu Dec  8 15:51:53 2016 Martin Van Elslande
 */
 
 #include                <SFML/Graphics/RenderWindow.h>
@@ -23,7 +23,8 @@ t_my_framebuffer        *my_framebuffer_create(int width, int height)
     exit (84);
   framebuffer->width = width;
   framebuffer->height = height;
-  if ((framebuffer->pixels = malloc(width * height * 4 * sizeof(framebuffer->pixels))) == NULL)
+  if ((framebuffer->pixels = malloc
+       (width * height * 4 * sizeof(framebuffer->pixels))) == NULL)
     exit (84);
   while (i < width * height * 4)
     {

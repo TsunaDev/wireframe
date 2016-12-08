@@ -6,7 +6,7 @@
 ** Login   <martin.van-elslande@epitech.eu>
 ** 
 ** Started on  Tue Dec  6 13:31:04 2016 Martin Van Elslande
-** Last update Thu Dec  8 15:08:21 2016 Martin Van Elslande
+** Last update Thu Dec  8 15:55:10 2016 Martin Van Elslande
 */
 
 #include	"infog.h"
@@ -52,7 +52,7 @@ void	coordinates_into_tab(char *buffer, int ***coordinates, int col_num,
   int	*tab;
   int	x;
 
-  tab = malloc(sizeof(int) * 2);
+  tab = malloc(sizeof(int) * 3);
   tab[0] = 0;
   x = 0;
   tab[1] = 0;
@@ -72,9 +72,10 @@ void	coordinates_into_tab(char *buffer, int ***coordinates, int col_num,
 void	get_coordinates(char **av, int ***coordinates, int **size)
 {
   int	fd;
-  char	buffer[307200];
+  char	*buffer;
   int	bytes;
 
+  buffer = malloc(sizeof(char) * 307201);
   (*size) = malloc(sizeof(int) * 2);  
   (*size)[0] = 0;
   (*size)[1] = 0;

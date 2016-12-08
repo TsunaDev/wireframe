@@ -5,7 +5,7 @@
 ** Login   <martin.van-elslande@epitech.eu>
 ** 
 ** Started on  Wed Nov 23 13:55:01 2016 Martin Van Elslande
-** Last update Thu Dec  8 15:28:37 2016 Martin Van Elslande
+** Last update Thu Dec  8 16:03:52 2016 Martin Van Elslande
 */
 
 #include		"infog.h"
@@ -70,8 +70,8 @@ void	test_lines(t_my_framebuffer *framebuffer)
   sfVector2i	from;
   sfVector2i	to;
 
-  from = vector_creator(10, 10);
-  to = vector_creator(90, 90);
+  from = vector_creator(25, 10);
+  to = vector_creator(75, 90);
   my_draw_line(framebuffer, from, to, sfRed);
 }
 
