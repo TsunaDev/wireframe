@@ -5,11 +5,10 @@
 ** Login   <martin.van-elslande@epitech.eu>
 ** 
 ** Started on  Mon Dec  5 23:47:28 2016 Martin Van Elslande
-** Last update Tue Dec  6 22:38:36 2016 Martin Van Elslande
+** Last update Thu Dec  8 15:06:11 2016 Martin Van Elslande
 */
 
-#include		<math.h>
-#include		<SFML/Graphics/RenderWindow.h>
+#include		"infog.h"
 
 sfVector2i              my_parallel_projection(sfVector3f pose3d, float angle)
 {

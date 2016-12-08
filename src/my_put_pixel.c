@@ -5,16 +5,12 @@
 ** Login   <martin.van-elslande@epitech.eu>
 ** 
 ** Started on  Mon Dec  5 23:04:57 2016 Martin Van Elslande
-** Last update Thu Dec  8 14:02:24 2016 Martin Van Elslande
+** Last update Thu Dec  8 15:05:50 2016 Martin Van Elslande
 */
 
-#include                <SFML/Graphics/RenderWindow.h>
-#include                <SFML/Graphics/Texture.h>
-#include                <SFML/Graphics/Sprite.h>
 #include		"infog.h"
 
-void	my_put_pixel(t_my_framebuffer *framebuffer, int x, int y,
-		     sfColor color)
+void	my_put_pixel(t_my_framebuffer *framebuffer, int x, int y, sfColor color)
 {
   if (x >= 0 && y >= 0)
     {

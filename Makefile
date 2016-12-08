@@ -5,18 +5,18 @@
 ## Login   <martin.van-elslande@epitech.eu>
 ## 
 ## Started on  Thu Nov 10 15:13:37 2016 Martin Van Elslande
-## Last update Wed Dec  7 22:55:02 2016 Martin Van Elslande
+## Last update Thu Dec  8 14:56:29 2016 Martin Van Elslande
 ##
 
-CFLAGS	=	-I include
+CFLAGS	=	-Iinclude
 
-SRC	=	infog.c			\
+SRC	=	infog.c				\
 		src/my_draw_line.c		\
-		src/my_put_pixel.c	\
-		get_coordinates.c	\
-		src/window.c		\
-		src/my_utils.c		\
-		src/my_parallel_projection.c \
+		src/my_put_pixel.c		\
+		get_coordinates.c		\
+		src/window.c			\
+		src/my_utils.c			\
+		src/my_parallel_projection.c	\
 		my_getnbr.c
 
 OBJ	=	$(SRC:.c=.o)

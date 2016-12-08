@@ -6,14 +6,12 @@
 ** Login   <martin.van-elslande@epitech.eu>
 ** 
 ** Started on  Tue Dec  6 13:31:04 2016 Martin Van Elslande
-** Last update Wed Dec  7 13:54:32 2016 Martin Van Elslande
+** Last update Thu Dec  8 15:08:21 2016 Martin Van Elslande
 */
 
-#include	<fcntl.h>
-#include	<unistd.h>
-#include	<stdlib.h>
+#include	"infog.h"
 
-int	*get_number_of_lines_and_rows(int **size, char *buffer)
+void	get_number_of_lines_and_rows(int **size, char *buffer)
 {
   int	i;
 
@@ -48,12 +46,11 @@ int	*manage_comma_and_n(char *buffer, int *tab)
   return (tab);
 }
 
-int	**coordinates_into_tab(char *buffer, int ***coordinates, int col_num,
+void	coordinates_into_tab(char *buffer, int ***coordinates, int col_num,
 			       int lines_num)
 {
   int	*tab;
   int	x;
-  int	n;
 
   tab = malloc(sizeof(int) * 2);
   tab[0] = 0;
@@ -72,9 +69,8 @@ int	**coordinates_into_tab(char *buffer, int ***coordinates, int col_num,
     }
 }
 
-int	*get_coordinates(char **av, int ***coordinates, int **size)
+void	get_coordinates(char **av, int ***coordinates, int **size)
 {
-  int	i;
   int	fd;
   char	buffer[307200];
   int	bytes;
@@ -82,10 +78,11 @@ int	*get_coordinates(char **av, int ***coordinates, int **size)
   (*size) = malloc(sizeof(int) * 2);  
   (*size)[0] = 0;
   (*size)[1] = 0;
-  if ((fd = open(av[1], O_RDONLY)) == -1)
-    return;
-  while ((bytes = read(fd, buffer, 307200)) != 0)
-    buffer[bytes] = '\0';
-  get_number_of_lines_and_rows(size, buffer);
-  coordinates_into_tab(buffer, coordinates, (*size)[1], (*size)[0]);
+  if ((fd = open(av[1], O_RDONLY)) != -1)
+    {
+      while ((bytes = read(fd, buffer, 307200)) != 0)
+	buffer[bytes] = '\0';
+      get_number_of_lines_and_rows(size, buffer);
+      coordinates_into_tab(buffer, coordinates, (*size)[1], (*size)[0]);
+    }
 }

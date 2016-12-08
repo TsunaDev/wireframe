@@ -5,15 +5,12 @@
 ** Login   <martin.van-elslande@epitech.eu>
 ** 
 ** Started on  Mon Dec  5 23:08:28 2016 Martin Van Elslande
-** Last update Wed Dec  7 22:54:45 2016 Martin Van Elslande
+** Last update Thu Dec  8 15:13:31 2016 Martin Van Elslande
 */
 
-#include        <SFML/Graphics/RenderWindow.h>
-#include        <SFML/Graphics/Texture.h>
-#include        <SFML/Graphics/Sprite.h>
 #include	"infog.h"
 
-void	my_draw_line_2(t_my_framebuffer *framebuffer, int *arr)
+void	my_draw_line_2(t_my_framebuffer *framebuffer, int *arr, sfColor color)
 {
   int	stock;
   int	i;
@@ -29,12 +26,12 @@ void	my_draw_line_2(t_my_framebuffer *framebuffer, int *arr)
 	  stock -= arr[3];
 	  arr[0] += arr[4];
 	}
-      my_put_pixel(framebuffer, arr[0], arr[1], sfRed);
+      my_put_pixel(framebuffer, arr[0], arr[1], color);
       i++;
     }
 }
 
-void	my_draw_line_1(t_my_framebuffer *framebuffer, int *arr)
+void	my_draw_line_1(t_my_framebuffer *framebuffer, int *arr, sfColor color)
 {
   int	i;
   int	stock;
@@ -50,7 +47,7 @@ void	my_draw_line_1(t_my_framebuffer *framebuffer, int *arr)
 	  stock -= arr[2];
 	  arr[1] += arr[5];
 	}
-      my_put_pixel(framebuffer, arr[0], arr[1], sfRed);
+      my_put_pixel(framebuffer, arr[0], arr[1], color);
       i++;
     }
 }
@@ -58,9 +55,7 @@ void	my_draw_line_1(t_my_framebuffer *framebuffer, int *arr)
 void	my_draw_line(t_my_framebuffer *framebuffer, sfVector2i from,
 		     sfVector2i to, sfColor color)
 {
-  int   stock;
   int   arr[6];
-  int   i;
 
   arr[0] = from.x;
   arr[1] = from.y;
@@ -72,10 +67,9 @@ void	my_draw_line(t_my_framebuffer *framebuffer, sfVector2i from,
     arr[2] *= (-1);
   if (arr[3] < 0)
     arr[3] *= (-1);
-  my_put_pixel(framebuffer, arr[0], arr[1], sfRed);
-  i = 1;
+  my_put_pixel(framebuffer, arr[0], arr[1], color);
   if (arr[2] > arr[3])
-    my_draw_line_1(framebuffer, arr);
+    my_draw_line_1(framebuffer, arr, color);
   else
-    my_draw_line_2(framebuffer, arr);
+    my_draw_line_2(framebuffer, arr, color);
 }

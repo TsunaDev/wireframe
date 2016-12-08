@@ -5,7 +5,7 @@
 ** Login   <martin.van-elslande@epitech.eu>
 ** 
 ** Started on  Tue Dec  6 21:45:51 2016 Martin Van Elslande
-** Last update Tue Dec  6 21:50:01 2016 Martin Van Elslande
+** Last update Thu Dec  8 15:12:53 2016 Martin Van Elslande
 */
 
 #include                <SFML/Graphics/RenderWindow.h>
@@ -18,7 +18,6 @@ t_my_framebuffer        *my_framebuffer_create(int width, int height)
 {
   int                   i;
   t_my_framebuffer      *framebuffer;
-  sfUint8               *pixels;
 
   if ((framebuffer = malloc(sizeof(t_my_framebuffer))) == NULL)
     exit (84);
@@ -39,8 +38,8 @@ sfRenderWindow          *window_open(int width, int height)
   sfVideoMode           mode;
   sfRenderWindow*       window;
 
-  mode.width = 640;
-  mode.height = 480;
+  mode.width = width;
+  mode.height = height;
   mode.bitsPerPixel = 32;
   window = sfRenderWindow_create(mode, "SFML window", sfResize | sfClose, NULL);
   if (window == NULL)
