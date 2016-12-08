@@ -5,14 +5,14 @@
 ** Login   <martin.van-elslande@epitech.eu>
 ** 
 ** Started on  Mon Dec  5 23:04:57 2016 Martin Van Elslande
-** Last update Thu Dec  8 15:05:50 2016 Martin Van Elslande
+** Last update Thu Dec  8 15:17:41 2016 Martin Van Elslande
 */
 
 #include		"infog.h"
 
 void	my_put_pixel(t_my_framebuffer *framebuffer, int x, int y, sfColor color)
 {
-  if (x >= 0 && y >= 0)
+  if (x >= 0 && y >= 0 && x < framebuffer->height && y < framebuffer->width)
     {
       framebuffer->pixels[(640 * y + x) * 4] = color.r;
       framebuffer->pixels[(640 * y + x) * 4 + 1] = color.g;
