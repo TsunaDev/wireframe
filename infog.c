@@ -5,7 +5,7 @@
 ** Login   <martin.van-elslande@epitech.eu>
 ** 
 ** Started on  Wed Nov 23 13:55:01 2016 Martin Van Elslande
-** Last update Fri Dec  9 09:57:31 2016 Martin Van Elslande
+** Last update Fri Dec  9 15:25:18 2016 Martin Van Elslande
 */
 
 #include		"infog.h"
@@ -23,7 +23,7 @@ void			create_wframe_verticals(t_my_framebuffer *framebuffer,
 
   n = 0;
   x = 0;
-  angle = 3.1415926535897932 * 5 / 6;
+  angle = M_PI * 5 / 6;
   while (n < size[1])
     {
       while (x < size[0] * n)
@@ -50,7 +50,7 @@ void			create_wireframe(t_my_framebuffer *framebuffer,
   sfVector3f	tmp;
 
   x = 0;
-  angle = 3.1415926535897932 * 5 / 6;
+  angle = M_PI * 5 / 6;
   while (x < size[0] * size[1] - 1)
     {
       pose3d = create_3dvector(coordinates[x], x);
@@ -65,15 +65,15 @@ void			create_wireframe(t_my_framebuffer *framebuffer,
   create_wframe_verticals(framebuffer, coordinates, size, color);
 }
 
-void	test_lines(t_my_framebuffer *framebuffer)
-{
-  sfVector2i	from;
-  sfVector2i	to;
+/* void	test_lines(t_my_framebuffer *framebuffer) */
+/* { */
+/*   sfVector2i	from; */
+/*   sfVector2i	to; */
 
-  from = vector_creator(25, 10);
-  to = vector_creator(75, 90);
-  my_draw_line(framebuffer, from, to, sfRed);
-}
+/*   from = vector_creator(25, 10); */
+/*   to = vector_creator(75, 90); */
+/*   my_draw_line(framebuffer, from, to, sfRed); */
+/* } */
 
 void			all_tasks(int **coordinates, int *size, sfColor color)
 {
@@ -87,7 +87,6 @@ void			all_tasks(int **coordinates, int *size, sfColor color)
   texture = sfTexture_create(640, 480);
   framebuffer = my_framebuffer_create(640, 480);
   sfSprite_setTexture(sprite, texture, sfTrue);
-  //test_lines(framebuffer); 
   create_wireframe(framebuffer, coordinates, size, color);
   sfTexture_updateFromPixels(texture, framebuffer->pixels, 640, 480, 0, 0);
   window_loop(window, sprite);
@@ -97,13 +96,13 @@ void			all_tasks(int **coordinates, int *size, sfColor color)
   sfRenderWindow_destroy(window);
 }
 
-int			main(int ac, char **av, char **env)
-{
-  int			**coordinates;
-  int			*size;
+/* int			main(int ac, char **av, char **env) */
+/* { */
+/*   int			**coordinates; */
+/*   int			*size; */
 
-  get_coordinates(av, &coordinates, &size);
-  coordinates[0][0] = 0;
-  all_tasks(coordinates, size, sfRed);
-  return (0);
-}
+/*   get_coordinates(av, &coordinates, &size); */
+/*   coordinates[0][0] = 0; */
+/*   all_tasks(coordinates, size, sfRed); */
+/*   return (0); */
+/* } */
