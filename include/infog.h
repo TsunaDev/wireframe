@@ -5,11 +5,11 @@
 ** Login   <martin.van-elslande@epitech.eu>
 ** 
 ** Started on  Thu Nov 10 11:45:14 2016 Martin Van Elslande
-** Last update Fri Dec  9 19:14:30 2016 Martin Van Elslande
+** Last update Fri Dec  9 20:44:10 2016 Martin Van Elslande
 */
 
-#ifndef	MY_INFOG_
-#define	MY_INFOG_
+#ifndef			MY_INFOG_
+# define		MY_INFOG_
 
 #include                <math.h>
 #include                <SFML/Graphics/RenderWindow.h>
@@ -19,8 +19,8 @@
 #include		<unistd.h>
 #include                <stdlib.h>
 
-#define			SCREEN_WIDTH	1920
-#define			SCREEN_HEIGHT	1080
+# define		SCREEN_WIDTH	1920
+# define		SCREEN_HEIGHT	1080
 
 typedef	struct		s_my_framebuffer
 {
@@ -43,4 +43,3 @@ sfVector2i              my_parallel_projection(sfVector3f pose3d, float angle);
 sfVector2i		my_isometric_projection(sfVector3f pose3d);
 
 #endif	/* !MY_INFOG_ */
-  

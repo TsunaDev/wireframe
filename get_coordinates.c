@@ -1,4 +1,3 @@
-
 /*
 ** get_coordinates.c for wireframe in /home/tsuna/Epitech/projects/Infograph/wireframe
 ** 
@@ -6,7 +5,7 @@
 ** Login   <martin.van-elslande@epitech.eu>
 ** 
 ** Started on  Tue Dec  6 13:31:04 2016 Martin Van Elslande
-** Last update Thu Dec  8 15:55:10 2016 Martin Van Elslande
+** Last update Fri Dec  9 21:08:57 2016 Martin Van Elslande
 */
 
 #include	"infog.h"
@@ -56,10 +55,13 @@ void	coordinates_into_tab(char *buffer, int ***coordinates, int col_num,
   tab[0] = 0;
   x = 0;
   tab[1] = 0;
-  (*coordinates) = malloc(sizeof(int*) * ((lines_num * col_num) + 1));
+  if (((*coordinates) = malloc(sizeof(int*) *
+			       ((lines_num * col_num) + 1))) == NULL)
+    return ;
   while (buffer[tab[0]] != '\0')
     {
-      (*coordinates)[x] = malloc(sizeof(int) * 4);
+      if (((*coordinates)[x] = malloc(sizeof(int) * 4)) == NULL)
+	return ;
       if (x != 0)
 	(*coordinates)[x][0] = x % col_num;
       (*coordinates)[x][1] = tab[1];
@@ -75,8 +77,10 @@ void	get_coordinates(char **av, int ***coordinates, int **size)
   char	*buffer;
   int	bytes;
 
-  buffer = malloc(sizeof(char) * 307201);
-  (*size) = malloc(sizeof(int) * 2);  
+  if ((buffer = malloc(sizeof(char) * 307201)) == NULL)
+    return ;
+  if (((*size) = malloc(sizeof(int) * 2)) == NULL)
+    return ;
   (*size)[0] = 0;
   (*size)[1] = 0;
   if ((fd = open(av[1], O_RDONLY)) != -1)
@@ -86,4 +90,5 @@ void	get_coordinates(char **av, int ***coordinates, int **size)
       get_number_of_lines_and_rows(size, buffer);
       coordinates_into_tab(buffer, coordinates, (*size)[1], (*size)[0]);
     }
+  free(buffer);
 }

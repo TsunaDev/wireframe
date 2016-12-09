@@ -5,7 +5,7 @@
 ** Login   <martin_v@epitech.net>
 ** 
 ** Started on  Thu Oct  6 20:23:55 2016 Martin Van Elslande
-** Last update Tue Oct 11 15:43:16 2016 Martin Van Elslande
+** Last update Fri Dec  9 20:42:05 2016 Martin Van Elslande
 */
 
 int	my_isneg(char *str)
@@ -47,7 +47,7 @@ int	my_getnbr(char *str)
   neg = my_isneg(str);
   num = my_isnumber(str, i);
   while (num == 0 || str[i] == '-' || str[i] == '+')
-    {    
+    {
       if (num == 0)
 	{
 	  nbr = (10 * nbr) + (str[i] - 48);

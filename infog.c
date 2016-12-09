@@ -5,7 +5,7 @@
 ** Login   <martin.van-elslande@epitech.eu>
 ** 
 ** Started on  Wed Nov 23 13:55:01 2016 Martin Van Elslande
-** Last update Fri Dec  9 20:31:52 2016 Martin Van Elslande
+** Last update Fri Dec  9 20:46:27 2016 Martin Van Elslande
 */
 
 #include		"infog.h"
@@ -71,14 +71,15 @@ void			all_tasks(int **coordinates, int *size, sfColor color)
   sfTexture		*texture;
   sfSprite		*sprite;
   t_my_framebuffer	*framebuffer;
-  
+
   window = window_open(SCREEN_WIDTH, SCREEN_HEIGHT);
   sprite = sfSprite_create();
   texture = sfTexture_create(SCREEN_WIDTH, SCREEN_HEIGHT);
   framebuffer = my_framebuffer_create(SCREEN_WIDTH, SCREEN_HEIGHT);
   sfSprite_setTexture(sprite, texture, sfTrue);
   create_wireframe(framebuffer, coordinates, size, color);
-  sfTexture_updateFromPixels(texture, framebuffer->pixels, SCREEN_WIDTH, SCREEN_HEIGHT, 0, 0);
+  sfTexture_updateFromPixels(texture, framebuffer->pixels,
+			     SCREEN_WIDTH, SCREEN_HEIGHT, 0, 0);
   window_loop(window, sprite);
   sfSprite_destroy(sprite);
   sfTexture_destroy(texture);
@@ -86,13 +87,13 @@ void			all_tasks(int **coordinates, int *size, sfColor color)
   sfRenderWindow_destroy(window);
 }
 
-/* int			main(int ac, char **av, char **env) */
-/* { */
-/*   int			**coordinates; */
-/*   int			*size; */
+int			main(int ac, char **av, char **env)
+{
+  int			**coordinates;
+  int			*size;
 
-/*   get_coordinates(av, &coordinates, &size); */
-/*   coordinates[0][0] = 0; */
-/*   all_tasks(coordinates, size, sfRed); */
-/*   return (0); */
-/* } */
+  get_coordinates(av, &coordinates, &size);
+  coordinates[0][0] = 0;
+  all_tasks(coordinates, size, sfRed);
+  return (0);
+}

@@ -5,13 +5,9 @@
 ** Login   <martin.van-elslande@epitech.eu>
 ** 
 ** Started on  Tue Dec  6 21:45:51 2016 Martin Van Elslande
-** Last update Fri Dec  9 18:50:20 2016 Martin Van Elslande
+** Last update Fri Dec  9 21:06:22 2016 Martin Van Elslande
 */
 
-#include                <SFML/Graphics/RenderWindow.h>
-#include                <SFML/Graphics/Texture.h>
-#include                <SFML/Graphics/Sprite.h>
-#include                <stdlib.h>
 #include                "infog.h"
 
 t_my_framebuffer        *my_framebuffer_create(int width, int height)
@@ -20,15 +16,15 @@ t_my_framebuffer        *my_framebuffer_create(int width, int height)
   t_my_framebuffer      *framebuffer;
 
   if ((framebuffer = malloc(sizeof(t_my_framebuffer))) == NULL)
-    exit (84);
+    return (NULL);
   framebuffer->width = width;
   framebuffer->height = height;
   if ((framebuffer->pixels = malloc
        (width * height * 4 * sizeof(framebuffer->pixels))) == NULL)
-    exit (84);
+    return (NULL);
   while (i < width * height * 4)
     {
-      framebuffer->pixels[i] = 48;
+      framebuffer->pixels[i] = 0;
       i++;
     }
   return (framebuffer);
@@ -44,7 +40,7 @@ sfRenderWindow          *window_open(int width, int height)
   mode.bitsPerPixel = 32;
   window = sfRenderWindow_create(mode, "SFML window", sfResize | sfClose, NULL);
   if (window == NULL)
-    exit(1);
+    return (NULL);
   return (window);
 }
 
