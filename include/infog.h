@@ -5,7 +5,7 @@
 ** Login   <martin.van-elslande@epitech.eu>
 ** 
 ** Started on  Thu Nov 10 11:45:14 2016 Martin Van Elslande
-** Last update Fri Dec  9 09:50:10 2016 Martin Van Elslande
+** Last update Fri Dec  9 19:14:30 2016 Martin Van Elslande
 */
 
 #ifndef	MY_INFOG_
@@ -18,6 +18,9 @@
 #include		<fcntl.h>
 #include		<unistd.h>
 #include                <stdlib.h>
+
+#define			SCREEN_WIDTH	1920
+#define			SCREEN_HEIGHT	1080
 
 typedef	struct		s_my_framebuffer
 {
@@ -34,7 +37,7 @@ void			window_loop(sfRenderWindow *window, sfSprite *sprite);
 void			get_coordinates(char **av, int ***coordinates, int **size);
 void			my_put_pixel(t_my_framebuffer *framebuffer, int x, int y, sfColor color);
 int			my_getnbr(char *str);
-sfVector3f              create_3dvector(int *coordinates, int x);
+sfVector3f              create_3dvector(int *coordinates, int x, int size);
 sfVector2i              vector_creator(int x, int y);
 sfVector2i              my_parallel_projection(sfVector3f pose3d, float angle);
 sfVector2i		my_isometric_projection(sfVector3f pose3d);

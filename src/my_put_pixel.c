@@ -5,7 +5,7 @@
 ** Login   <martin.van-elslande@epitech.eu>
 ** 
 ** Started on  Mon Dec  5 23:04:57 2016 Martin Van Elslande
-** Last update Fri Dec  9 15:16:05 2016 Martin Van Elslande
+** Last update Fri Dec  9 18:18:53 2016 Martin Van Elslande
 */
 
 #include		"infog.h"
