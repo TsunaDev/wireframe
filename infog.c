@@ -5,7 +5,7 @@
 ** Login   <martin.van-elslande@epitech.eu>
 ** 
 ** Started on  Wed Nov 23 13:55:01 2016 Martin Van Elslande
-** Last update Thu Dec  8 16:03:52 2016 Martin Van Elslande
+** Last update Fri Dec  9 09:57:31 2016 Martin Van Elslande
 */
 
 #include		"infog.h"
@@ -87,9 +87,8 @@ void			all_tasks(int **coordinates, int *size, sfColor color)
   texture = sfTexture_create(640, 480);
   framebuffer = my_framebuffer_create(640, 480);
   sfSprite_setTexture(sprite, texture, sfTrue);
-  
-  test_lines(framebuffer); 
-  //  create_wireframe(framebuffer, coordinates, size, color);
+  //test_lines(framebuffer); 
+  create_wireframe(framebuffer, coordinates, size, color);
   sfTexture_updateFromPixels(texture, framebuffer->pixels, 640, 480, 0, 0);
   window_loop(window, sprite);
   sfSprite_destroy(sprite);

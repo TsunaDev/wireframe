@@ -5,7 +5,7 @@
 ** Login   <martin.van-elslande@epitech.eu>
 ** 
 ** Started on  Thu Nov 10 11:45:14 2016 Martin Van Elslande
-** Last update Thu Dec  8 15:08:45 2016 Martin Van Elslande
+** Last update Fri Dec  9 09:50:10 2016 Martin Van Elslande
 */
 
 #ifndef	MY_INFOG_
@@ -37,6 +37,7 @@ int			my_getnbr(char *str);
 sfVector3f              create_3dvector(int *coordinates, int x);
 sfVector2i              vector_creator(int x, int y);
 sfVector2i              my_parallel_projection(sfVector3f pose3d, float angle);
+sfVector2i		my_isometric_projection(sfVector3f pose3d);
 
 #endif	/* !MY_INFOG_ */
   

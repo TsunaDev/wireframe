@@ -5,7 +5,7 @@
 ** Login   <martin.van-elslande@epitech.eu>
 ** 
 ** Started on  Mon Dec  5 23:08:28 2016 Martin Van Elslande
-** Last update Thu Dec  8 15:35:30 2016 Martin Van Elslande
+** Last update Thu Dec  8 17:02:45 2016 Martin Van Elslande
 */
 
 #include	"infog.h"
@@ -21,7 +21,7 @@ void	my_draw_line_2(t_my_framebuffer *framebuffer, int *arr, sfColor color)
     {
       arr[1] += arr[5];
       stock += arr[2];
-      if (stock >= arr[3])
+      if (stock > arr[3])
 	{
 	  stock -= arr[3];
 	  arr[0] += arr[4];
@@ -42,7 +42,7 @@ void	my_draw_line_1(t_my_framebuffer *framebuffer, int *arr, sfColor color)
     {
       arr[0] += arr[4];
       stock += arr[3];
-      if (stock >= arr[2])
+      if (stock > arr[2])
 	{
 	  stock -= arr[2];
 	  arr[1] += arr[5];
