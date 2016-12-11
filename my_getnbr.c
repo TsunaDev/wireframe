@@ -5,7 +5,7 @@
 ** Login   <martin_v@epitech.net>
 ** 
 ** Started on  Thu Oct  6 20:23:55 2016 Martin Van Elslande
-** Last update Fri Dec  9 20:42:05 2016 Martin Van Elslande
+** Last update Sun Dec 11 17:14:50 2016 Martin Van Elslande
 */
 
 int	my_isneg(char *str)
@@ -15,7 +15,7 @@ int	my_isneg(char *str)
 
   i = 0;
   n = 0;
-  while (str[i] != '\0')
+  while (str[i] != '\0' && str[i] != ',' && str[i] != '\n')
     {
       if (str[i] == '-')
 	n++;

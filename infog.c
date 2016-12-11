@@ -5,7 +5,7 @@
 ** Login   <martin.van-elslande@epitech.eu>
 ** 
 ** Started on  Wed Nov 23 13:55:01 2016 Martin Van Elslande
-** Last update Fri Dec  9 20:46:27 2016 Martin Van Elslande
+** Last update Sun Dec 11 20:47:15 2016 Martin Van Elslande
 */
 
 #include		"infog.h"
@@ -30,6 +30,7 @@ void			create_wframe_verticals(t_my_framebuffer *framebuffer,
 	{
 	  pose3d = create_3dvector(coordinates[x], x, size[1]);
 	  from = my_parallel_projection(pose3d, angle);
+	  color = coloration(coordinates[x][2]);
 	  pose3d = create_3dvector(coordinates[x + size[1]], x + size[1], size[1]);
 	  to = my_parallel_projection(pose3d, angle);
 	  my_draw_line(framebuffer, from, to, color);
@@ -56,6 +57,7 @@ void			create_wireframe(t_my_framebuffer *framebuffer,
       pose3d = create_3dvector(coordinates[x], x, size[1]);
       tmp = pose3d;
       from = my_parallel_projection(pose3d, angle);
+      color = coloration(coordinates[x][2]);
       pose3d = create_3dvector(coordinates[x + 1], x + 1, size[1]);
       to = my_parallel_projection(pose3d, angle);
       if (pose3d.x >= tmp.x)
@@ -92,8 +94,14 @@ int			main(int ac, char **av, char **env)
   int			**coordinates;
   int			*size;
 
-  get_coordinates(av, &coordinates, &size);
-  coordinates[0][0] = 0;
-  all_tasks(coordinates, size, sfRed);
+  if (my_checkenv(env) == 84)
+    return (84);
+  if (ac == 2)
+    {
+      get_coordinates(av, &coordinates, &size);
+      coordinates[0][0] = 0;
+      all_tasks(coordinates, size, sfRed);
+    }
+  free(size);
   return (0);
 }

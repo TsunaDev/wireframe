@@ -5,7 +5,7 @@
 ** Login   <martin.van-elslande@epitech.eu>
 ** 
 ** Started on  Tue Dec  6 21:45:51 2016 Martin Van Elslande
-** Last update Fri Dec  9 21:06:22 2016 Martin Van Elslande
+** Last update Sun Dec 11 18:35:08 2016 Martin Van Elslande
 */
 
 #include                "infog.h"
@@ -15,6 +15,7 @@ t_my_framebuffer        *my_framebuffer_create(int width, int height)
   int                   i;
   t_my_framebuffer      *framebuffer;
 
+  i = 0;
   if ((framebuffer = malloc(sizeof(t_my_framebuffer))) == NULL)
     return (NULL);
   framebuffer->width = width;
@@ -38,7 +39,8 @@ sfRenderWindow          *window_open(int width, int height)
   mode.width = width;
   mode.height = height;
   mode.bitsPerPixel = 32;
-  window = sfRenderWindow_create(mode, "SFML window", sfResize | sfClose, NULL);
+  window = sfRenderWindow_create(mode, "Best Coach Ever",
+				 sfResize | sfClose, NULL);
   if (window == NULL)
     return (NULL);
   return (window);
