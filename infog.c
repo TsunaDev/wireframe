@@ -5,7 +5,7 @@
 ** Login   <martin.van-elslande@epitech.eu>
 ** 
 ** Started on  Wed Nov 23 13:55:01 2016 Martin Van Elslande
-** Last update Sun Dec 11 20:47:15 2016 Martin Van Elslande
+** Last update Sun Dec 11 22:52:04 2016 Martin Van Elslande
 */
 
 #include		"infog.h"
@@ -41,7 +41,8 @@ void			create_wframe_verticals(t_my_framebuffer *framebuffer,
 }
 
 void			create_wireframe(t_my_framebuffer *framebuffer,
-					 int **coordinates, int *size, sfColor color)
+					 int **coordinates, int *size,
+					 sfColor color)
 {
   sfVector3f	pose3d;
   sfVector2i	from;
