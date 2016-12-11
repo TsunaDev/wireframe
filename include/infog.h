@@ -5,7 +5,7 @@
 ** Login   <martin.van-elslande@epitech.eu>
 ** 
 ** Started on  Thu Nov 10 11:45:14 2016 Martin Van Elslande
-** Last update Sun Dec 11 19:30:57 2016 Martin Van Elslande
+** Last update Sun Dec 11 23:25:09 2016 Martin Van Elslande
 */
 
 #ifndef			MY_INFOG_
@@ -36,7 +36,7 @@ void			my_draw_line(t_my_framebuffer *framebuffer,
 sfRenderWindow		*window_open(int width, int height);
 t_my_framebuffer	*my_framebuffer_create(int width, int height);
 void			window_loop(sfRenderWindow *window, sfSprite *sprite);
-void			get_coordinates(char **av, int ***coordinates,
+int			get_coordinates(char **av, int ***coordinates,
 					int **size);
 void			my_put_pixel(t_my_framebuffer *framebuffer, int x,
 				     int y, sfColor color);

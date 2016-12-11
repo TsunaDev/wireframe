@@ -5,7 +5,7 @@
 ** Login   <martin.van-elslande@epitech.eu>
 ** 
 ** Started on  Wed Nov 23 13:55:01 2016 Martin Van Elslande
-** Last update Sun Dec 11 22:52:04 2016 Martin Van Elslande
+** Last update Sun Dec 11 23:26:20 2016 Martin Van Elslande
 */
 
 #include		"infog.h"
@@ -94,15 +94,18 @@ int			main(int ac, char **av, char **env)
 {
   int			**coordinates;
   int			*size;
+  int			error_test;
 
   if (my_checkenv(env) == 84)
     return (84);
   if (ac == 2)
     {
-      get_coordinates(av, &coordinates, &size);
+      error_test = get_coordinates(av, &coordinates, &size);
+      if (error_test == -1)
+	return (84);
       coordinates[0][0] = 0;
       all_tasks(coordinates, size, sfRed);
+      free(size);
     }
-  free(size);
   return (0);
 }

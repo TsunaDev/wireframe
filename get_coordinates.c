@@ -5,7 +5,7 @@
 ** Login   <martin.van-elslande@epitech.eu>
 ** 
 ** Started on  Tue Dec  6 13:31:04 2016 Martin Van Elslande
-** Last update Sun Dec 11 20:43:31 2016 Martin Van Elslande
+** Last update Sun Dec 11 23:22:54 2016 Martin Van Elslande
 */
 
 #include	"infog.h"
@@ -73,16 +73,28 @@ void	coordinates_into_tab(char *buffer, int ***coordinates, int col_num,
   free(tab);
 }
 
-void	get_coordinates(char **av, int ***coordinates, int **size)
+int	manage_input(char *str)
+{
+  int	fd;
+
+  if ((fd = open(str, O_DIRECTORY)) == -1)
+    return (0);
+  else
+    return (-1);
+}
+
+int	get_coordinates(char **av, int ***coordinates, int **size)
 {
   int	fd;
   char	buffer[1000000];
   int	bytes;
 
   if (((*size) = malloc(sizeof(int) * 2)) == NULL)
-    return ;
+    return (-1);
   (*size)[0] = 0;
   (*size)[1] = 0;
+  if (manage_input(av[1]) == -1)
+    return (-1);
   if ((fd = open(av[1], O_RDONLY)) != -1)
     {
       while ((bytes = read(fd, buffer, 307200)) != 0)
@@ -90,4 +102,6 @@ void	get_coordinates(char **av, int ***coordinates, int **size)
       get_number_of_lines_and_rows(size, buffer);
       coordinates_into_tab(buffer, coordinates, (*size)[1], (*size)[0]);
     }
+  else
+    return (-1);
 }
