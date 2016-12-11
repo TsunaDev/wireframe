@@ -5,7 +5,7 @@
 ** Login   <martin.van-elslande@epitech.eu>
 ** 
 ** Started on  Tue Dec  6 13:31:04 2016 Martin Van Elslande
-** Last update Sun Dec 11 23:22:54 2016 Martin Van Elslande
+** Last update Sun Dec 11 23:32:35 2016 Martin Van Elslande
 */
 
 #include	"infog.h"
@@ -78,9 +78,12 @@ int	manage_input(char *str)
   int	fd;
 
   if ((fd = open(str, O_DIRECTORY)) == -1)
-    return (0);
+      return (0);
   else
-    return (-1);
+    {
+      close(fd);
+      return (-1);
+    }
 }
 
 int	get_coordinates(char **av, int ***coordinates, int **size)
@@ -104,4 +107,5 @@ int	get_coordinates(char **av, int ***coordinates, int **size)
     }
   else
     return (-1);
+  close(fd);
 }
