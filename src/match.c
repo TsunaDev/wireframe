@@ -1,5 +1,5 @@
 /*
-** EPITECH PROJECT, 2018
+** EPITECH PROJECT, 2016
 ** wireframe
 ** File description:
 ** string match function
