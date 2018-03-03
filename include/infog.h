@@ -1,11 +1,8 @@
 /*
-** infog.h for infograph in /home/tsuna/Epitech/projects/Infograph
-** 
-** Made by Martin Van Elslande
-** Login   <martin.van-elslande@epitech.eu>
-** 
-** Started on  Thu Nov 10 11:45:14 2016 Martin Van Elslande
-** Last update Sun Dec 11 23:25:09 2016 Martin Van Elslande
+** EPITECH PROJECT, 2018
+** wireframe
+** File description:
+** Here we see what's a tek1's work
 */
 
 #ifndef			MY_INFOG_
@@ -25,21 +22,21 @@
 
 typedef	struct		s_my_framebuffer
 {
-  sfUint8		*pixels;
-  int			width;
-  int			height;
+	sfUint8		*pixels;
+	int		width;
+	int		height;
 }			t_my_framebuffer;
 
 void			my_draw_line(t_my_framebuffer *framebuffer,
-				     sfVector2i from, sfVector2i to,
-				     sfColor color);
+				sfVector2i from, sfVector2i to,
+				sfColor color);
 sfRenderWindow		*window_open(int width, int height);
 t_my_framebuffer	*my_framebuffer_create(int width, int height);
-void			window_loop(sfRenderWindow *window, sfSprite *sprite);
+void			window_loop(sfRenderWindow *window, sfSprite *);
 int			get_coordinates(char **av, int ***coordinates,
 					int **size);
 void			my_put_pixel(t_my_framebuffer *framebuffer, int x,
-				     int y, sfColor color);
+				int y, sfColor color);
 int			my_getnbr(char *str);
 sfColor			coloration(float z);
 sfVector3f              create_3dvector(int *coordinates, int x, int size);
