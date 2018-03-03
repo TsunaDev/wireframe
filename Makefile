@@ -5,7 +5,7 @@
 ## wireframe's makefile
 ##
 
-CFLAGS	=	-Iinclude -ggdb3
+CFLAGS	=	-Iinclude
 
 SRC	=	src/infog.c			\
 		src/match.c			\
